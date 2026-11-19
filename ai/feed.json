@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "feed": "A-LIVe live island news",
+  "updated_at": "2026-11-20T09:00:00+02:00",
+  "pack": [
+    {
+      "version": 1,
+      "id": "grok-20261120-feed-001",
+      "created_at": "2026-11-20T09:00:00+02:00",
+      "news": [
+        {"title": "Live news reaches the islands", "text": "A message in a bottle washed up at dawn. From now on the islands hear fresh news every day. Listen to what people say about it."}
+      ],
+      "events": [
+        {"id": "bottle-cheer", "title": "Good news lifts spirits", "text": "Everyone is talking about the bottle. People feel a little brighter today.", "kind": "good",
+         "effect": {"type": "npc_mood", "target": "all", "amount": 8, "duration_s": 900}},
+        {"id": "bottle-memory", "title": "A story to remember", "text": "The bottle had a drawing of seven lights inside.", "kind": "info",
+         "effect": {"type": "npc_memory", "target": "all", "text": "a bottle with seven lights drawn inside", "feel": "good"}}
+      ],
+      "story": [
+        {"who": "Old fisher", "text": "Bottles never come by chance. Someone out there wants us to keep the lights burning."}
+      ]
+    },
+    {
+      "version": 1,
+      "id": "grok-20261120-feed-002",
+      "created_at": "2026-11-20T09:00:00+02:00",
+      "min_day": 3,
+      "news": [
+        {"title": "Shoals near the reef", "text": "Gulls are diving all morning near the reef. Fishers say it is a good day for the rod."}
+      ],
+      "events": [
+        {"id": "reef-shoals", "title": "Fish are biting", "text": "Big shoals swim close to the shore for a while.", "kind": "good",
+         "effect": {"type": "gather_mult", "target": "fish", "mult": 1.4, "duration_s": 600}}
+      ]
+    },
+    {
+      "version": 1,
+      "id": "grok-20261120-feed-003",
+      "created_at": "2026-11-20T09:00:00+02:00",
+      "requires": "crew",
+      "news": [
+        {"title": "The crew wants a lookout", "text": "The work crew says a lookout would help everyone see storms coming."}
+      ],
+      "events": [
+        {"id": "crew-lookout", "title": "Plans for a lookout", "text": "The crew sketches a tall lookout on a flat rock.", "kind": "info",
+         "effect": {"type": "worker_project", "target": "lookout", "island": "current", "idea": "A lookout to watch for storms"}},
+        {"id": "crew-proud", "title": "Proud crew", "text": "Your crew is proud of their work and hums while they build.", "kind": "good",
+         "effect": {"type": "npc_mood", "target": "crew", "amount": 10, "duration_s": 1200}}
+      ],
+      "story": [
+        {"who": "@crew", "text": "If we can see the storm, we can beat the storm."}
+      ]
+    },
+    {
+      "version": 1,
+      "id": "grok-20261120-feed-004",
+      "created_at": "2026-11-20T09:00:00+02:00",
+      "min_day": 6,
+      "news": [
+        {"title": "Clouds in the west", "text": "The sky turns grey in the west. Keep some wood dry and check your shelter."}
+      ],
+      "events": [
+        {"id": "west-clouds", "title": "Worried faces", "text": "People keep looking at the western sky.", "kind": "info",
+         "effect": {"type": "npc_mood", "target": "all", "amount": -4, "duration_s": 600}}
+      ]
+    }
+  ]
+}
